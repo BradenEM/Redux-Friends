@@ -1,9 +1,10 @@
-import { LOGGING_IN,
-FETCH_DATA_START,
-FETCH_DATA_SUCCESS,
-ADD_FRIEND,
-ADD_SUCCESS,
-ADD_FAILURE
+import {
+  LOGGING_IN,
+  FETCH_DATA_START,
+  FETCH_DATA_SUCCESS,
+  ADD_FRIEND,
+  ADD_SUCCESS,
+  ADD_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -44,23 +45,23 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         addingFriend: true,
-        error: ''
-      }
+        error: ""
+      };
     }
     case ADD_SUCCESS: {
       return {
         ...state,
         friends: action.payload,
         isLoggingIn: false,
-        error: ''
-      }
+        error: ""
+      };
     }
     case ADD_FAILURE: {
       return {
         ...state,
         error: action.payload,
         isLoggedIn: false
-      }
+      };
     }
     default:
       return state;
